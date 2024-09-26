@@ -4,10 +4,20 @@ function openCity(e, name){
   let myArr = Array.from(tabcontent)
 
   myArr.map((item) =>{
-
-    console.log(item)
+    item.style.display = "none";
   })
 
+  tablinks = document.querySelectorAll(".tablinks");
+  let tabArr = Array.from(tablinks)
+
+  tabArr.map((item) =>{
+    item.className = item.className.replace(" active", "");
+  })
+
+  document.getElementById(name).style.display = "block";
+  e.currentTarget.className += " active";
+
+  console.log(name)
 
 }
 
